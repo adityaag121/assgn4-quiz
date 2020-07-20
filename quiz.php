@@ -104,7 +104,8 @@ $username = $_SESSION['user'];
 			$level = $question['level'];
 
 			if ($level == 4) {
-				echo '<img class="question-image" src="images/questions/question' . $actual_question_number . '" alt="Question Image">';
+				$imagefile = glob("images/questions/question$actual_question_number.*");
+				echo '<img class="question-image" src="' . $imagefile[0] . '" alt="Question Image">';
 			}
 			echo '<form action="/quiz.php" method="post">';
 			if ($level == 1 || $level == 2) {
