@@ -185,6 +185,7 @@ if ($_SESSION['user'] != "admin") {
 </main>
 
 <script>
+	let mybool = false;
 	const updateFormByLevel = (level) => {
 		let html;
 		switch (parseInt(level)) {
@@ -227,13 +228,15 @@ if ($_SESSION['user'] != "admin") {
 			document.getElementById('question').insertAdjacentElement("afterend", element);
 			form.insertBefore(label, element);
 			let br = document.createElement("br");
-			form.insertBefore(element, br);
+			form.insertBefore(br, label);
 			form.setAttribute("enctype", "multipart/form-data");
-		} else {
+			mybool = true;
+		} else if (mybool) {
 			let form = document.getElementById("questionForm");
 			form.removeAttribute("enctype");
 			form.removeChild(document.getElementById("Uploadlabel"));
 			form.removeChild(document.getElementById("questionimage"));
+			mybool = false;
 		}
 	}
 </script>
