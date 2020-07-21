@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location: login.php");
+	header("Location: login");
 	exit;
 }
 
@@ -53,10 +53,10 @@ include_once "includes/header.inc.php";
 		$query = "SELECT COUNT(*) FROM `user`";
 		$count = intval(mysqli_fetch_row(mysqli_query($link, $query))[0]);
 		if ($n > 0) {
-			echo '<a class="leaderboard__pagelink" href="/leaderboard.php?n=' . ($n - 1) . '">&lt;Previous Page</a>';
+			echo '<a class="leaderboard__pagelink" href="/leaderboard?n=' . ($n - 1) . '">&lt;Previous Page</a>';
 		}
 		if ($count > ($n + 1) * $max) {
-			echo '<a class="leaderboard__pagelink" href="/leaderboard.php?n=' . ($n + 1) . '">Next Page&gt;</a>';
+			echo '<a class="leaderboard__pagelink" href="/leaderboard?n=' . ($n + 1) . '">Next Page&gt;</a>';
 		}
 
 		mysqli_close($link);

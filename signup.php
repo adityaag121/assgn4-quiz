@@ -8,7 +8,7 @@ if (isset($_SESSION['user'])) {
 include_once "includes/header.inc.php";
 ?>
 
-<main>
+<main class="main--signup">
 	<div class="signup-container">
 		<h3 class="signup-container__heading">Sign Up</h3>
 		<div class="" id="error-div"></div>
@@ -19,7 +19,7 @@ include_once "includes/header.inc.php";
 			<input type="password" name="password-confirm" id="password-confirm" placeholder="Confirm Password" required>
 			<input type="submit" value="Sign up" name="submit" class="submit-btn" id="submit">
 		</form>
-		<p>Already have an account? <a href="login.php">Log In</a></p>
+		<p>Already have an account? <a href="login">Log In</a></p>
 	</div>
 </main>
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location: login.php");
+	header("Location: login");
 	exit;
 }
 include_once "includes/header.inc.php";
@@ -26,8 +26,8 @@ include_once "includes/header.inc.php";
 				Scoring scheme is (+100) for a correct answer and (-25) for an incorrect one.
 			</p>
 			<div class="hero__buttons">
-				<a href="/quiz.php" class="btn btn--primary">Start Quiz</a>
-				<a href="/leaderboard.php" class="btn btn--secondary">View Leaderboard</a>
+				<a href="/quiz" class="btn btn--primary">Start Quiz</a>
+				<a href="/leaderboard" class="btn btn--secondary">View Leaderboard</a>
 			</div>
 		</div>
 		<div class="hero__image">

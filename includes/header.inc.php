@@ -16,7 +16,7 @@
 		<?php
 		if (isset($_SESSION['user'])) {
 			if ($_SESSION['user'] == "admin") {
-				echo '<a href="/admin.php" class="logout-btn">Admin Panel</a>';
+				echo '<a href="/admin" class="logout-btn">Admin Panel</a>';
 			}
 			echo '<form action="includes/logout.inc.php" method="post">
 			<div class="logout__username">' . $_SESSION['user'] . '

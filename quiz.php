@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location: /login.php");
+	header("Location: /login");
 	exit;
 }
 
@@ -107,7 +107,7 @@ $username = $_SESSION['user'];
 				$imagefile = glob("images/questions/question$actual_question_number.*");
 				echo '<img class="question-image" src="' . $imagefile[0] . '" alt="Question Image">';
 			}
-			echo '<form action="/quiz.php" method="post">';
+			echo '<form action="/quiz" method="post">';
 			if ($level == 1 || $level == 2) {
 				$query = "SELECT * FROM `answer` WHERE `question_id`=$actual_question_number";
 				$result = mysqli_query($link, $query);
@@ -128,7 +128,7 @@ $username = $_SESSION['user'];
 			echo '<h2>Congratulations! You have completed the quiz</h2><br>';
 			echo '<p>You did great. You have completed all the levels and your total score is ' . $score . '</p><br>';
 			echo '<p>View the complete leaderboard by clicking the button below</p><br>';
-			echo '<a href="/leaderboard.php" class="btn btn--primary">View Leaderboard</a>';
+			echo '<a href="/leaderboard" class="btn btn--primary">View Leaderboard</a>';
 		}
 		mysqli_close($link);
 		?>

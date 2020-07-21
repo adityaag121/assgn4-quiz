@@ -1,13 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location: /login.php");
+	header("Location: /login");
 	exit;
 }
 
 include_once "includes/header.inc.php";
 if ($_SESSION['user'] != "admin") {
-	echo "<h2>Sorry, You are not authorised to access this page</h2>";
+	echo "<h1>Sorry, You are not authorised to access this page</h1>";
 	include_once "includes/footer.inc.php";
 	exit;
 }
