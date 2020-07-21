@@ -4,6 +4,9 @@ php_flag magic_quotes_gpc 1
 php_value mbstring.http_input auto
 php_value date.timezone America/New_York
 
+ErrorDocument 404 http://ktjquiz.epizy.com/404
+
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
